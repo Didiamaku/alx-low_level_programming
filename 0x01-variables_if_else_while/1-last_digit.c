@@ -5,7 +5,6 @@
 /* betty style doc for function main goes there */
 /**
  * main - Entry point of program to print last digit of random word
- *
  * Return: 0 if code runs successfully
  */
 int main(void)
@@ -18,11 +17,11 @@ int main(void)
 	/* your code goes there */
 	z = n % 10;
 	if (z > 5)
-		printf("Last digit of %d is %d and is greater than 6", n, m);
+		printf("Last digit of %d is %d and is greater than 5", n, z);
 	else if (z == 0)
-		printf("Last digit of %d is %d and is 0", n, m);
+		printf("Last digit of %d is %d and is 0", n, z);
 	else if (z < 6 && z != 0)
-		printf("Last digit of %d is %d and is less than 6 and not 0", n, m);
+		printf("Last digit of %d is %d and is less than 6 and not 0", n, z);
 	printf("\n");
 	return (0);
 }
