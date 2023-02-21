@@ -1,51 +1,114 @@
- #include "main.h"
+#include "main.h"
 
 /**
- * print_times_table - function that prints the n times table, starting with 0.
- * @n: input of table n
- * Return: nothing.
+ * print_thousand - print out the digit in the thousand spot
+ * @sum: Value to scan for thousand spot
+ *
+ * Return: Void
  */
+static void print_thousand(int sum)
+{
+	if (sum / 1000 == 0)
+	{
+		_putchar(32);
+	}
+	else
+	{
+		_putchar('0' + (sum / 1000));
+	}
+}
 
+
+/**
+ * print_hundred - print out the digit in the hundred spot
+ * @sum: Value to scan for hundred spot
+ *
+ * Return: Void
+ */
+static void print_hundred(int sum)
+{
+	if (sum / 100 == 0)
+	{
+		_putchar(32);
+	}
+	else
+	{
+		_putchar('0' + (sum / 100));
+	}
+}
+
+
+/**
+ * print_tenth - print out the digit in the tenth spot
+ * @sum: Value to scan for tenth spot
+ *
+ * Return: Void
+ */
+static void print_tenth(int sum)
+{
+	if (sum / 10 == 0)
+	{
+		_putchar(32);
+	}
+	else
+	{
+		if ((sum / 10) > 9)
+		{
+			_putchar('0' + (sum / 10 % 10));
+		}
+		else
+		{
+			_putchar('0' + (sum / 10));
+		}
+	}
+}
+
+
+/**
+ * print_base10 - print out the digit in the base10 spot
+ * @sum: Value to scan for base10 spot
+ *
+ * Return: Void
+ */
+static void print_base10(int sum)
+{
+	if (sum % 10 == 0)
+	{
+		_putchar('0');
+	}
+	else
+	{
+		_putchar('0' + (sum % 10));
+	}
+}
+
+/**
+ * print_times_table - print out the 9 times table
+ * @n: Valuse use to generate times tables.
+ *
+ * Return: void
+ */
 void print_times_table(int n)
 {
-	int row, col;
-	int mult = 0;
+	int v, h;
 
-	if (n <= 15 && n >= 0)
+	if (n > 15)
 	{
-		for (row = 0; row <= n; row++)
+		return;
+	}
+	for (h = 0 ; h < n + 1 ; h++)
+	{
+		_putchar('0');
+		for (v = 1 ; v < n + 1 ; v++)
 		{
-			for (col = 0; col <= n; col++)
-			{
-				mult = (row * col);
-				if (mult < 10)
-				{
-					if (col != 0)
-					{
-						_putchar(' ');
-						_putchar(' ');
-						_putchar(' ');
-					}
-					_putchar(mult + '0');
-				}
-				else if (mult < 100)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((mult / 10) + '0');
-					_putchar((mult % 10) + '0');
-				}
-				else
-				{
-					_putchar(' ');
-					_putchar((mult / 100) + '0');
-					_putchar(((mult % 100) / 10) + '0');
-					_putchar((mult % 10) + '0');
-				}
-				if (col != n)
-					_putchar(',');
-			}
-			_putchar('\n');
+			int sum = v * h;
+
+			_putchar(',');
+			print_thousand(sum);
+			print_hundred(sum);
+			print_tenth(sum);
+			print_base10(sum);
 		}
+		_putchar('\n');
 	}
 }
