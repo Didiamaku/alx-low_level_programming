@@ -1,3 +1,8 @@
+/*
+ * file: 7-print_chessboard.c
+ * Auth: sam tech (samuel birhanu)
+ */
+
 #include "main.h"
 
 /**
