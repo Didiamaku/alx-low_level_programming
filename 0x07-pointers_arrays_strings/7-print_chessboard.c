@@ -1,10 +1,4 @@
-/*
- * file: 7-print_chessboard.c
- * Auth: sam tech (samuel birhanu)
- */
-
 #include "main.h"
-
 /**
  * print_chessboard - Entry point
  * @a: array
