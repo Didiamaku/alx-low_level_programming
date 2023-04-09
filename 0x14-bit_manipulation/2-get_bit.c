@@ -2,14 +2,14 @@
 
 /**
  * get_bit -  value of a bit at an index
- * @index: index of bit
- * @n
+ * @index: index of bit 0
+ * @n: bit
  *
  * Return: value of bit
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index >= (sizeof(unsigned long int) * 8))
+	if (index >= (sizeof(unsigned long int) * 4))
 		return (-1);
 
 	if ((n & (1 << index)) == 0)
