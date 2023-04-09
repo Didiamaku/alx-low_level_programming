@@ -2,8 +2,8 @@
 
 /**
  * set_bit - set bit to 1 
- * @index: index of bit 0
- * @n:  bit
+ * @index: index of bit start from 0
+ * @n: bit
  *
  * Return: 1 if correct, -1 if wrong
  */
