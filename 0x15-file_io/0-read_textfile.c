@@ -6,7 +6,7 @@
  * @filename: file
  *
  * Return: no of letters read & printed
- * m if filename is NULL, if write fails or does not write
+ * 0 if filename is NULL, if write fails or does not write
  * expected amount of bytes
  */
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -16,11 +16,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buffer; /* to hold text */
 
 	if (filename == NULL)
-		return (m);
+		return (0);
 	/* allocate memory to buffer */
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
-		return (m);
+		return (0);
 
 	/* open, read and write */
 	fd = open(filename, O_RDONLY);
@@ -31,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fd == -1 || r == -1 || w == -1 || w != r)
 	{
 		free(buffer); /* free malloc */
-		return (m);
+		return (0);
 	}
 
 	free(buffer); /* else */
