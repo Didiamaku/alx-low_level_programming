@@ -2,7 +2,7 @@
 
 /**
  * set_bit - set bit to 1 
- * @index: index of bit 
+ * @index: index of bit 0
  * @n:  bit
  *
  * Return: 1 if correct, -1 if wrong
