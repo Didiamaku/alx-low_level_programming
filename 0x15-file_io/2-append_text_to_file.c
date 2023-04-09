@@ -6,7 +6,7 @@
  * @text_content: string to write to the file
  * Return: 1 if correct
  * -1 if wrong
- * if text_content is NULL, add nothing 
+ * if text_content is NULL, add nothing
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
