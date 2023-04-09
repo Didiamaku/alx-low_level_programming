@@ -11,7 +11,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	/* create variables to open, write and find length of str */
-	int opn, wr, str_len = 0;
+	int op, wr, str_len = 0;
 
 	/* set fail condition for filename */
 	if (filename == NULL)
@@ -24,7 +24,7 @@ int create_file(const char *filename, char *text_content)
 	}
 	/* open, create, write and set file */
 	op = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	wr = write(opn, text_content, str_len);
+	wr = write(op, text_content, str_len);
 	/* set fail conditions */
 	if (op == -1 || wr == -1)
 		return (-1);
