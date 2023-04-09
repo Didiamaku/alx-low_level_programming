@@ -1,12 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include <stddef.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <string.h>
 
 /**
  * main - copy content
@@ -25,7 +19,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		printf("Error: not enough \n");
+		printf("Error: not enough arguments\n");
 		exit(97);
 	}
 	if (!file_from || !file_to)
@@ -36,7 +30,7 @@ int main(int ac, char **av)
 
 	if (file_from == NULL || access(file_from, F_OK) == 0)
 	{
-		printf("Error: Can't read  %s\n", file_from);
+		printf("Error: Can't read from  %s\n", file_from);
 		exit(98);
 	}
 
